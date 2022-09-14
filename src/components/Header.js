@@ -14,7 +14,7 @@ function Header({ weather }) {
         <div className="header__content">
           <img className="header__logo" src={logo} alt="wtwr logo" />
           <p className="header__date">
-            {currentDate},{weather.city}
+            {currentDate}, {weather.city}
           </p>
         </div>
         <div className="header__info">
