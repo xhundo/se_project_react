@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  margin: 0 40px 0 40px;
+  justify-content: space-between;
+}
+
+.header__content {
+  display: flex;
+}
+
+.header__info {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin: 32px 24px 0 0;
+}
+
+.header__date {
+  margin: 43px 0 0 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.header__btn {
+  margin: 40px 20px 0 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.header__user-name {
+  margin: 40px 12px 0 0;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.header__user-avatar {
+  margin: 32px 0 0 0;
+}
