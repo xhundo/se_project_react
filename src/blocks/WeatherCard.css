@@ -1,0 +1,96 @@
+.weather__card {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 163, 255, 1);
+  border-radius: 12px;
+  background-image: url("../images/sunny.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__temp {
+  font-family: "Cabinet Grotesk";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  margin: 20px 0 20px 16px;
+}
+
+.weather__day-cloudy {
+  background-image: url("../images/daycloudy.png");
+  background-color: rgba(0, 163, 255, 1);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__day-rain {
+  background-image: url("../images/dayrainy.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(108, 166, 199, 1);
+}
+
+.weather__day-heavy-rain {
+  background-image: url("../images/daystorm.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(108, 166, 199, 1);
+}
+.weather__day-snow {
+  background-image: url("../images/daysnow.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(108, 166, 199, 1);
+}
+
+.weather__day-fog {
+  background-image: url("../images/dayfog.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: rgba(108, 166, 199, 1);
+}
+
+.weather__night {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/night.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__night-cloudy {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/nightpartlycloud.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__night-rain {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/nightrain.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__night-heavy-rain {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/nightstorm.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__night-snow {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/nightsnow.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.weather__night-fog {
+  background-color: rgba(40, 104, 151, 1);
+  background-image: url("../images/nightfog.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
