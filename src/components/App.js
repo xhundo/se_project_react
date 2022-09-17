@@ -6,6 +6,7 @@ import React from "react";
 import { key } from "../utils/constants";
 import { location } from "../utils/constants";
 import Main from "./Main";
+import { defaultClothingItems } from "../utils/constants";
 
 function App() {
   const [weatherData, setWeatherData] = React.useState({});
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header weather={weatherData} />
-      <Main weather={weatherData} />
+      <Main weather={weatherData} cards={defaultClothingItems} />
       <Footer />
     </div>
   );

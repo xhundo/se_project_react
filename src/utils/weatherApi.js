@@ -1,3 +1,13 @@
+const weatherRange = (realTemp) => {
+  if (realTemp >= 86) {
+    return "hot";
+  } else if (realTemp >= 66 && realTemp <= 85) {
+    return "warm";
+  } else if (realTemp <= 65) {
+    return "cold";
+  }
+};
+
 const getWeather = (apiKey, location) => {
   const parsedLocation = `${location.latitude},${location.longitude}`;
   return fetch(
@@ -15,6 +25,7 @@ const filterWeather = (data) => {
   if (!data) {
     return null;
   }
+
   const weather = {};
   weather.city = data.location.name;
   weather.temperature = data.current.temp_f;
@@ -24,4 +35,4 @@ const filterWeather = (data) => {
   return weather;
 };
 
-export { getWeather, filterWeather };
+export { getWeather, filterWeather, weatherRange };
