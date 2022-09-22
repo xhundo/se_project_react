@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/se_project_react/static/css/main.83c952f4.css",
+    "main.js": "/se_project_react/static/js/main.7ec8c9ea.js",
+    "static/js/787.79f92504.chunk.js": "/se_project_react/static/js/787.79f92504.chunk.js",
+    "static/media/avatar.svg": "/se_project_react/static/media/avatar.854041bda88eabe69eb8648fa415f560.svg",
+    "static/media/Shorts.png": "/se_project_react/static/media/Shorts.2b39c3ff0425e884ec39.png",
+    "static/media/Sneakers.png": "/se_project_react/static/media/Sneakers.24b3901b3d91eaa8b405.png",
+    "static/media/Tshirt.png": "/se_project_react/static/media/Tshirt.a2261d425eed5da92f8b.png",
+    "static/media/nightfog.png": "/se_project_react/static/media/nightfog.87ed0c38ca3eeccd5e51.png",
+    "static/media/dayfog.png": "/se_project_react/static/media/dayfog.594bc15986070d0991de.png",
+    "static/media/Cap.png": "/se_project_react/static/media/Cap.734ae28983d0441f0ca1.png",
+    "static/media/Logo.svg": "/se_project_react/static/media/Logo.2e52a3b54443b649938df0a9b3d231e2.svg",
+    "static/media/btn-close.svg": "/se_project_react/static/media/btn-close.5041c8cbf1275be14ac1.svg",
+    "index.html": "/se_project_react/index.html",
+    "static/media/itemLike.svg": "/se_project_react/static/media/itemLike.9af4bc2a5c83c5df7d12.svg",
+    "main.83c952f4.css.map": "/se_project_react/static/css/main.83c952f4.css.map",
+    "main.7ec8c9ea.js.map": "/se_project_react/static/js/main.7ec8c9ea.js.map",
+    "787.79f92504.chunk.js.map": "/se_project_react/static/js/787.79f92504.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83c952f4.css",
+    "static/js/main.7ec8c9ea.js"
+  ]
+}
