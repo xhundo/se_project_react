@@ -4,7 +4,7 @@ import shorts from "../images/Shorts.png";
 import cap from "../images/Cap.png";
 import sneakers from "../images/Sneakers.png";
 
-function ItemCard({ card }) {
+function ItemCard({ card, cardClick }) {
   return (
     <>
       <div className="item__content">
@@ -16,7 +16,12 @@ function ItemCard({ card }) {
             <button className="item__like"></button>
           </div>
         </div>
-        <img className="item__img" src={card.link} />
+        <img
+          className="item__img"
+          src={card.link}
+          alt={card.name}
+          onClick={cardClick}
+        />
       </div>
     </>
   );

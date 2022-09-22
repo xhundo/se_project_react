@@ -40,6 +40,11 @@
   text-align: left;
 }
 
+.header__btn:hover {
+  transition: ease-in 0.3s;
+  color: lightgray;
+}
+
 .header__user-name {
   margin: 40px 12px 0 0;
   font-family: "Cabinet Grotesk", sans-serif;

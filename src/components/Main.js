@@ -3,7 +3,7 @@ import ItemCard from "./ItemCard";
 import "../blocks/Main.css";
 import { weatherRange } from "../utils/weatherApi";
 
-function Main({ weather, cards }) {
+function Main({ weather, cards, handleCardClick }) {
   const currentTemp = weather.temperature;
 
   return (
@@ -20,7 +20,11 @@ function Main({ weather, cards }) {
             {cards
               .filter((card) => card.weather === weatherRange(currentTemp))
               .map((currentCard) => (
-                <ItemCard key={currentCard._id} card={currentCard} />
+                <ItemCard
+                  key={currentCard._id}
+                  card={currentCard}
+                  cardClick={() => handleCardClick(currentCard)}
+                />
               ))}
           </ul>
         </section>
