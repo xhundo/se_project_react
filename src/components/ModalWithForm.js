@@ -1,28 +1,31 @@
 import "../blocks/ModalWithForm.css";
 
-function ModalWithForm(props) {
+function ModalWithForm({
+  isOpen,
+  closeModal,
+  closeByEsc,
+  children,
+  onClose,
+  buttonTxt,
+  name,
+  title,
+}) {
   return (
-    <>
-      <div className={`modal modal__${props.name} `} onClick={props.closeModal}>
-        <div className="modal__content">
-          <form
-            className="modal__form"
-            name={props.name}
-            onKeyDown={props.closeByEsc}
-          >
-            <p className="modal__title">{props.title}</p>
-            {props.children}
-            <button
-              className="modal__btn-close"
-              onClick={props.onClose}
-            ></button>
-            <button className="modal__submit" type="submit">
-              {props.buttonTxt}
-            </button>
-          </form>
-        </div>
+    <div
+      className={`modal modal__${name} ${isOpen ? `modal_open` : ""}`}
+      onClick={closeModal}
+    >
+      <div className="modal__content">
+        <form className="modal__form" name={name} onKeyDown={closeByEsc}>
+          <h2 className="modal__title">{title}</h2>
+          {children}
+          <button className="modal__btn-close" onClick={onClose}></button>
+          <button className="modal__submit" type="submit">
+            {buttonTxt}
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
 

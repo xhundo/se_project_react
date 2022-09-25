@@ -2,6 +2,18 @@ const key = "f586cc9ee1aa4376b9115511221809";
 
 const location = { latitude: "48.87", longitude: "2.33" };
 
+const bgNight = "weather__night";
+const bgNightCloudy = "weather__night-cloudy";
+const bgNightRain = "weather__night-rain";
+const bgNightHeavy = "weather__night-heavy-rain";
+const bgNightSnow = "weather__night-snow";
+const bgNightFog = "weather__night-fog";
+const bgDayCloudy = "weather__day-cloudy";
+const bgDayRain = "weather__day-rain";
+const bgDayHeavy = "weather__day-heavy-rain";
+const bgDaySnow = "weather__day-snow";
+const bgdayFog = "weather__day-fog";
+
 const defaultClothingItems = [
   {
     _id: 0,
@@ -41,4 +53,19 @@ const defaultClothingItems = [
   },
 ];
 
-export { key, location, defaultClothingItems };
+export {
+  key,
+  location,
+  defaultClothingItems,
+  bgNight,
+  bgNightCloudy,
+  bgNightRain,
+  bgNightHeavy,
+  bgNightSnow,
+  bgNightFog,
+  bgDayCloudy,
+  bgDayRain,
+  bgDayHeavy,
+  bgDaySnow,
+  bgdayFog,
+};

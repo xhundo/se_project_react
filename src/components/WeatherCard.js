@@ -1,47 +1,62 @@
+import React from "react";
+import {
+  bgNight,
+  bgNightCloudy,
+  bgNightRain,
+  bgNightHeavy,
+  bgNightSnow,
+  bgNightFog,
+  bgDayCloudy,
+  bgDayRain,
+  bgDayHeavy,
+  bgDaySnow,
+  bgdayFog,
+} from "../utils/constants";
 import "../blocks/WeatherCard.css";
 
 function WeatherCard({ weather }) {
-  const bg = document.querySelector(".weather__card");
+  let bgStyles = "weather__card";
+
   if (weather.condition === 0) {
-    bg.classList.add("weather__night");
+    bgStyles = bgNight;
   } else if (weather.condition === 1) {
-    bg.classList.add("weather__card");
+    bgStyles = bgStyles;
   }
 
   if (weather.condition === 0 && weather.conditions === "Partly cloudy") {
-    bg.classList.add("weather__night-cloudy");
+    bgStyles = bgNightCloudy;
   } else if (
     weather.condition === 0 &&
     weather.conditions === "Moderate rain"
   ) {
-    bg.classList.add("weather__night-rain");
+    bgStyles = bgNightRain;
   } else if (weather.condition === 0 && weather.conditions === "Heavy Rain") {
-    bg.classList.add("weather__night-heavy-rain");
+    bgStyles = bgNightHeavy;
   } else if (weather.condition === 0 && weather.conditions === "Light snow") {
-    bg.classList.add("weather__night-snow");
+    bgStyles = bgNightSnow;
   } else if (weather.condition === 0 && weather.conditions === "Fog") {
-    bg.classList.add("weather__night-fog");
+    bgStyles = bgNightFog;
   } else if (
     weather.condition === 1 &&
     weather.conditions === "Partly cloudy"
   ) {
-    bg.classList.add("weather__day-cloudy");
+    bgStyles = bgDayCloudy;
   } else if (
     weather.condition === 1 &&
     weather.conditions === "Moderate rain"
   ) {
-    bg.classList.add("weather__day-rain");
+    bgStyles = bgDayRain;
   } else if (weather.condition === 1 && weather.conditions === "Heavy rain") {
-    bg.classList.add("weather__day-heavy-rain");
+    bgStyles = bgDayHeavy;
   } else if (weather.condition === 1 && weather.conditions === "Light snow") {
-    bg.classList.add("weather__day-snow");
+    bgStyles = bgDaySnow;
   } else if (weather.condition === 1 && weather.conditions === "Fog") {
-    bg.classList.add("weather__day-fog");
+    bgStyles = bgdayFog;
   }
 
   return (
     <>
-      <div className="weather__card">
+      <div className={bgStyles}>
         <p className="weather__temp">{weather.temperature}°F</p>
       </div>
     </>

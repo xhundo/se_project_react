@@ -1,9 +1,12 @@
 import "../blocks/ItemModal.css";
 
-function ItemModal({ card, onClose, closeModal }) {
+function ItemModal({ card, onClose, closeModal, isOpen }) {
   return (
     <>
-      <div className="item__modal" onClick={closeModal}>
+      <div
+        className={`item__modal ${isOpen ? `modal_open` : ""}`}
+        onClick={closeModal}
+      >
         <div className="item__modal-content">
           <img className="item__preview" src={card.link} alt={card.name} />
           <p className="item__description">{card.name}</p>

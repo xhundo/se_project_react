@@ -16,7 +16,8 @@
   letter-spacing: 0em;
   text-align: left;
   color: white;
-  margin: 20px 0 20px 16px;
+  padding: 20px 0 20px 16px;
+  margin: 0;
 }
 
 .weather__day-cloudy {
@@ -24,6 +25,8 @@
   background-color: rgba(0, 163, 255, 1);
   background-repeat: no-repeat;
   background-position: top right;
+  margin: 0;
+  border-radius: 12px;
 }
 
 .weather__day-rain {
@@ -31,6 +34,7 @@
   background-repeat: no-repeat;
   background-position: top right;
   background-color: rgba(108, 166, 199, 1);
+  border-radius: 12px;
 }
 
 .weather__day-heavy-rain {
@@ -38,12 +42,14 @@
   background-repeat: no-repeat;
   background-position: top right;
   background-color: rgba(108, 166, 199, 1);
+  border-radius: 12px;
 }
 .weather__day-snow {
   background-image: url("../images/daysnow.png");
   background-repeat: no-repeat;
   background-position: top right;
   background-color: rgba(108, 166, 199, 1);
+  border-radius: 12px;
 }
 
 .weather__day-fog {
@@ -51,6 +57,7 @@
   background-repeat: no-repeat;
   background-position: top right;
   background-color: rgba(108, 166, 199, 1);
+  border-radius: 12px;
 }
 
 .weather__night {
@@ -58,6 +65,7 @@
   background-image: url("../images/night.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
 
 .weather__night-cloudy {
@@ -65,6 +73,7 @@
   background-image: url("../images/nightpartlycloud.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
 
 .weather__night-rain {
@@ -72,6 +81,7 @@
   background-image: url("../images/nightrain.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
 
 .weather__night-heavy-rain {
@@ -79,6 +89,7 @@
   background-image: url("../images/nightstorm.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
 
 .weather__night-snow {
@@ -86,6 +97,7 @@
   background-image: url("../images/nightsnow.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
 
 .weather__night-fog {
@@ -93,4 +105,5 @@
   background-image: url("../images/nightfog.png");
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 12px;
 }
