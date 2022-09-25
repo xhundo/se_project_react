@@ -15,3 +15,7 @@
 - Fuctionality for likes
 - Temperature unit change
 - Profile route via React
+
+
+## Check out live demo!
+https://xhundo.github.io/se_project_react/
