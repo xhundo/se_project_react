@@ -5,7 +5,7 @@
 ## WTWR is a web application which displays users with clothing items to wear for various temperatures forecasts throughout different, states, cities & countries.
 
 ### Technologies used:
- <img src="{    https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E}" />
+(https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
 
     https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
