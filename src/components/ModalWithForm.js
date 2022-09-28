@@ -19,7 +19,11 @@ function ModalWithForm({
         <form className="modal__form" name={name} onKeyDown={closeByEsc}>
           <h2 className="modal__title">{title}</h2>
           {children}
-          <button className="modal__btn-close" onClick={onClose}></button>
+          <button
+            type="button"
+            className="modal__btn-close"
+            onClick={onClose}
+          ></button>
           <button className="modal__submit" type="submit">
             {buttonTxt}
           </button>

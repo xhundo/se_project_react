@@ -55,11 +55,9 @@ function WeatherCard({ weather }) {
   }
 
   return (
-    <>
-      <div className={bgStyles}>
-        <p className="weather__temp">{weather.temperature}°F</p>
-      </div>
-    </>
+    <div className={bgStyles}>
+      <p className="weather__temp">{weather.temperature}°F</p>
+    </div>
   );
 }
 
