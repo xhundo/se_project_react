@@ -27,8 +27,12 @@ const filterWeather = (data) => {
   }
 
   const weather = {};
+
   weather.city = data.location.name;
-  weather.temperature = data.current.temp_f;
+  weather.temperature = {
+    F: `${data.current.temp_f}`,
+    C: `${data.current.temp_c}`,
+  };
   weather.icon = data.current.condition.icon;
   weather.condition = data.current.is_day;
   weather.conditions = data.current.condition.text;

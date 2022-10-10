@@ -1,0 +1,39 @@
+.clothes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.clothes-section__text {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #000;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.clothes-section__btn {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0em;
+  text-align: left;
+  background: transparent;
+  border: none;
+}
+
+.clothes-section__items {
+  display: flex;
+}
+
+.clothes-section__cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(1016px + 50px);
+  padding: 0;
+}

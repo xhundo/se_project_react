@@ -13,7 +13,7 @@ function ItemCard({ card, cardClick }) {
       </div>
       <img
         className="item__img"
-        src={card.link}
+        src={card.imageUrl}
         alt={card.name}
         onClick={cardClick}
       />

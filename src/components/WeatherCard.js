@@ -13,8 +13,29 @@ import {
   bgdayFog,
 } from "../utils/constants";
 import "../blocks/WeatherCard.css";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
 function WeatherCard({ weather }) {
+  const { currentTemperatureUnit } = React.useContext(
+    CurrentTemperatureUnitContext
+  );
+
+  const weatherData =
+    (currentTemperatureUnit === "F"
+      ? weather?.temperature?.F
+      : weather?.temperature?.C) || null;
+
+  const weatherData2 = () => {
+    if (weather && weather.temperature) {
+      if (currentTemperatureUnit === "F") {
+        return weather.temperature[currentTemperatureUnit];
+      } else {
+        return weather.temperature[currentTemperatureUnit];
+      }
+      return null;
+    }
+  };
+
   let bgStyles = "weather__card";
 
   if (weather.condition === 0) {
@@ -56,7 +77,9 @@ function WeatherCard({ weather }) {
 
   return (
     <div className={bgStyles}>
-      <p className="weather__temp">{weather.temperature}°F</p>
+      <p className="weather__temp">
+        {weatherData}°{currentTemperatureUnit}
+      </p>
     </div>
   );
 }

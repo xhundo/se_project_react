@@ -1,12 +1,11 @@
+import "../blocks/ClothesSection.css";
 import React from "react";
-import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
-import "../blocks/Main.css";
 import { weatherRange } from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weather, cards, handleCardClick }) {
-  const { currentTemperatureUnit } = React.useContext(
+function ClothesSection({ cards, weather, cardClick, handleAddClick }) {
+  const currentTemperatureUnit = React.useContext(
     CurrentTemperatureUnitContext
   );
 
@@ -14,30 +13,29 @@ function Main({ weather, cards, handleCardClick }) {
     currentTemperatureUnit === "F"
       ? weather?.temperature?.F
       : weather?.temperature?.C;
-
   return (
-    <main className="main">
-      <section className="main__weather-card">
-        <WeatherCard weather={weather} />
-      </section>
-      <p className="main__weather-status">
-        {`Today is ${currentTemp}°${currentTemperatureUnit} / You may want to wear:`}
-      </p>
-      <section className="main__items">
-        <ul className="main__list-items">
+    <>
+      <section className="clothes-section">
+        <div className="clothes-section__items">
+          <p className="clothes-section__text">Your items</p>
+          <button className="clothes-section__btn" onClick={handleAddClick}>
+            + Add new
+          </button>
+        </div>
+        <ul className="clothes-section__cards">
           {cards
             .filter((card) => card.weather === weatherRange(currentTemp))
             .map((currentCard) => (
               <ItemCard
                 key={currentCard.id}
                 card={currentCard}
-                cardClick={() => handleCardClick(currentCard)}
+                cardClick={() => cardClick(currentCard)}
               />
             ))}
         </ul>
       </section>
-    </main>
+    </>
   );
 }
 
-export default Main;
+export default ClothesSection;
