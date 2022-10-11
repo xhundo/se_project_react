@@ -76,3 +76,26 @@
   width: 100%;
   height: 498px;
 }
+
+.item-btn__delete {
+  font-family: "Cabinet Grotesk";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgba(255, 77, 0, 1);
+  letter-spacing: 0em;
+  text-align: left;
+  background: transparent;
+  border: none;
+  margin: 20px 32px 0 0;
+}
+
+.item-btn__delete:hover {
+  transition: ease-in 0.4s;
+  color: rgba(244, 70, 0, 1);
+}
+
+.item__container {
+  display: flex;
+  justify-content: space-between;
+}

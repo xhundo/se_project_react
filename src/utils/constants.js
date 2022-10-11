@@ -1,7 +1,7 @@
-const key = "6b57ab795dd8411b86233312222809";
+const key = "0c61d8b235c14d54bc2215401221010";
 
 const location = { latitude: "48.87", longitude: "2.33" };
-const baseURL = "http://localhost:3001";
+const baseURL = "https://my-json-server.typicode.com/xhundo/se_project_react";
 
 const bgNight = "weather__night";
 const bgNightCloudy = "weather__night-cloudy";

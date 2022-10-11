@@ -25,8 +25,11 @@ const addItems = (baseURL, name, imageUrl, weather) => {
 };
 
 const removeItems = (baseURL, id) => {
-  return fetch(`${baseURL}/items:${id}`, {
+  return fetch(`${baseURL}/items/${id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
   }).then(checkRes);
 };
 

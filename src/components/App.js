@@ -4,7 +4,7 @@ import AddItemModal from "./AddItemModal";
 import Header from "./Header";
 import ModalWithForm from "./ModalWithForm";
 import { getWeather, filterWeather } from "../utils/weatherApi";
-import React from "react";
+import React, { useState } from "react";
 import { getItems, removeItems, addItems } from "../utils/Api";
 import { key } from "../utils/constants";
 import ItemModal from "./ItemModal";
@@ -19,9 +19,30 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] =
     React.useState("F");
 
+  const [name, setName] = useState("");
+  const [imageUrl, setImageUrl] = React.useState("");
+  const [weather, setWeather] = React.useState();
   const [modalActive, setModalActive] = React.useState(null);
   const [clothingItems, setClothingItems] = React.useState([]);
   const [selectCard, setSelectedCard] = React.useState({});
+
+  React.useEffect(() => {
+    setName("");
+    setImageUrl("");
+    setWeather();
+  }, [modalActive === "create"]);
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleChangeImage = (e) => {
+    setImageUrl(e.target.value);
+  };
+
+  const handleChangeWeather = (e) => {
+    setWeather(e.target.value);
+  };
 
   const handleAddClick = () => {
     setModalActive("create");
@@ -31,6 +52,16 @@ function App() {
     addItems(baseURL, name, imageUrl, weather)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleCardDelete = (id) => {
+    removeItems(baseURL, id)
+      .then(() => {
+        setClothingItems([...clothingItems.filter((item) => item.id !== id)]);
       })
       .catch((err) => {
         console.log(err);
@@ -66,6 +97,12 @@ function App() {
     if (e.target === e.currentTarget) {
       setModalActive(null);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleAddItemSubmit({ name, imageUrl, weather });
+    handleClose();
   };
 
   const [weatherData, setWeatherData] = React.useState({});
@@ -122,6 +159,7 @@ function App() {
           onClose={handleClose}
           closeByEsc={handleCloseByEsc}
           closeModal={handleCloseByTarget}
+          handleSubmit={handleSubmit}
         >
           <label className="modal__input-label">Name</label>
           <input
@@ -129,6 +167,7 @@ function App() {
             type="text"
             placeholder="Name"
             required
+            onChange={handleChangeName}
           />
           <label className="modal__input-label">Image</label>
           <input
@@ -136,6 +175,7 @@ function App() {
             type="url"
             placeholder="Image URL"
             required
+            onChange={handleChangeImage}
           />
           <label className="modal__input-title">Select the weather type:</label>
           <label className="modal__input-text" htmlFor="hot">
@@ -143,7 +183,8 @@ function App() {
               className="modal__input-radio"
               id="hot"
               type="radio"
-              value="Hot"
+              value="hot"
+              onChange={handleChangeWeather}
             />
             Hot
           </label>
@@ -152,7 +193,8 @@ function App() {
               className="modal__input-radio"
               id="warm"
               type="radio"
-              value="Warm"
+              value="warm"
+              onChange={handleChangeWeather}
             />
             Warm
           </label>
@@ -161,7 +203,8 @@ function App() {
               className="modal__input-radio"
               id="cold"
               type="radio"
-              value="Cold"
+              value="cold"
+              onChange={handleChangeWeather}
             />
             Cold
           </label>
@@ -172,6 +215,7 @@ function App() {
           onClose={handleClose}
           closeByEsc={handleCloseByEsc}
           closeModal={handleCloseByTarget}
+          deleteCard={handleCardDelete}
         />
         <AddItemModal
           onAddItem={handleAddItemSubmit}
