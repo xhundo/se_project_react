@@ -25,17 +25,6 @@ function WeatherCard({ weather }) {
       ? weather?.temperature?.F
       : weather?.temperature?.C) || null;
 
-  const weatherData2 = () => {
-    if (weather && weather.temperature) {
-      if (currentTemperatureUnit === "F") {
-        return weather.temperature[currentTemperatureUnit];
-      } else {
-        return weather.temperature[currentTemperatureUnit];
-      }
-      return null;
-    }
-  };
-
   let bgStyles = "weather__card";
 
   if (weather.condition === 0) {
