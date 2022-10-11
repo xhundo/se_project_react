@@ -27,6 +27,16 @@ function App() {
   const [selectCard, setSelectedCard] = React.useState({});
 
   React.useEffect(() => {
+    getItems(`${baseURL}`)
+      .then((items) => {
+        setClothingItems(items);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  React.useEffect(() => {
     setName("");
     setImageUrl("");
     setWeather();
@@ -117,16 +127,6 @@ function App() {
     }
   }, []);
 
-  React.useEffect(() => {
-    getItems(`${baseURL}`)
-      .then((items) => {
-        setClothingItems(items);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
@@ -184,6 +184,7 @@ function App() {
               id="hot"
               type="radio"
               value="hot"
+              required
               onChange={handleChangeWeather}
             />
             Hot
@@ -194,6 +195,7 @@ function App() {
               id="warm"
               type="radio"
               value="warm"
+              required
               onChange={handleChangeWeather}
             />
             Warm
@@ -204,6 +206,7 @@ function App() {
               id="cold"
               type="radio"
               value="cold"
+              required
               onChange={handleChangeWeather}
             />
             Cold
