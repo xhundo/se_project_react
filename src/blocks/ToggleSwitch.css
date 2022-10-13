@@ -9,10 +9,11 @@
   background-color: #fff;
   border-radius: 20px;
   border: 2px solid #7e7e7e;
+  cursor: pointer;
 }
 
 .toggleswitch {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
@@ -28,7 +29,7 @@
 }
 
 .toggleswitch__f {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;
@@ -39,7 +40,7 @@
 }
 
 .toggleswitch__c {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 14px;
   font-weight: 700;
   line-height: 17px;

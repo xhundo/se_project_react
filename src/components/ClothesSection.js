@@ -14,27 +14,25 @@ function ClothesSection({ cards, weather, cardClick, handleAddClick }) {
       ? weather?.temperature?.F
       : weather?.temperature?.C;
   return (
-    <>
-      <section className="clothes-section">
-        <div className="clothes-section__items">
-          <p className="clothes-section__text">Your items</p>
-          <button className="clothes-section__btn" onClick={handleAddClick}>
-            + Add new
-          </button>
-        </div>
-        <ul className="clothes-section__cards">
-          {cards
-            .filter((card) => card.weather === weatherRange(currentTemp))
-            .map((currentCard) => (
-              <ItemCard
-                key={currentCard.id}
-                card={currentCard}
-                cardClick={() => cardClick(currentCard)}
-              />
-            ))}
-        </ul>
-      </section>
-    </>
+    <section className="clothes-section">
+      <div className="clothes-section__items">
+        <p className="clothes-section__text">Your items</p>
+        <button className="clothes-section__btn" onClick={handleAddClick}>
+          + Add new
+        </button>
+      </div>
+      <ul className="clothes-section__cards">
+        {cards
+          .filter((card) => card.weather === weatherRange(currentTemp))
+          .map((currentCard) => (
+            <ItemCard
+              key={currentCard.id}
+              card={currentCard}
+              cardClick={() => cardClick(currentCard)}
+            />
+          ))}
+      </ul>
+    </section>
   );
 }
 

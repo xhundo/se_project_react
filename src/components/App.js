@@ -1,10 +1,11 @@
 import "../blocks/App.css";
+import "../vendor/fonts/fonts.css";
 import Footer from "./Footer";
 import AddItemModal from "./AddItemModal";
 import Header from "./Header";
 import ModalWithForm from "./ModalWithForm";
 import { getWeather, filterWeather } from "../utils/weatherApi";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getItems, removeItems, addItems } from "../utils/Api";
 import { key } from "../utils/constants";
 import ItemModal from "./ItemModal";
@@ -16,17 +17,17 @@ import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitCon
 import { Route, Switch } from "react-router-dom";
 
 function App() {
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] =
-    React.useState("F");
-
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [name, setName] = useState("");
-  const [imageUrl, setImageUrl] = React.useState("");
-  const [weather, setWeather] = React.useState();
-  const [modalActive, setModalActive] = React.useState(null);
-  const [clothingItems, setClothingItems] = React.useState([]);
-  const [selectCard, setSelectedCard] = React.useState({});
+  const [imageUrl, setImageUrl] = useState("");
+  const [weather, setWeather] = useState(null);
+  const [modalActive, setModalActive] = useState(null);
+  const [clothingItems, setClothingItems] = useState([]);
+  const [selectCard, setSelectedCard] = useState({});
+  const [weatherData, setWeatherData] = useState({});
+  const modalIsActive = modalActive === "create";
 
-  React.useEffect(() => {
+  useEffect(() => {
     getItems(`${baseURL}`)
       .then((items) => {
         setClothingItems(items);
@@ -36,11 +37,12 @@ function App() {
       });
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    document.addEventListener("keydown", handleCloseByEsc);
     setName("");
     setImageUrl("");
     setWeather();
-  }, [modalActive === "create"]);
+  }, [modalIsActive]);
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -115,9 +117,7 @@ function App() {
     handleClose();
   };
 
-  const [weatherData, setWeatherData] = React.useState({});
-
-  React.useEffect(() => {
+  useEffect(() => {
     if (location.latitude && location.longitude) {
       getWeather(key, location)
         .then((data) => {

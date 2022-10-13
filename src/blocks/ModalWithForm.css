@@ -44,12 +44,13 @@
   border: none;
   width: 16px;
   height: 16px;
+  cursor: pointer;
 }
 
 .modal__submit {
   background-color: #000;
   border: none;
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 16px;
   color: #fff;
   border-radius: 4px;
@@ -60,6 +61,7 @@
   text-align: left;
   width: 126px;
   margin: 32px 0 36px 0;
+  cursor: pointer;
 }
 
 .modal__submit:hover {
@@ -72,7 +74,7 @@
 }
 
 .modal__title {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -88,7 +90,7 @@
 }
 
 .modal__input-label {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -99,7 +101,7 @@
 }
 
 .modal__input-title {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -114,7 +116,7 @@
   border-bottom: 1px solid #000;
   margin-bottom: 28px;
   padding: 0 0 4px 0;
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -123,7 +125,7 @@
 }
 
 .modal__input::placeholder {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -160,7 +162,7 @@
 .modal__input-text {
   display: flex;
   align-items: center;
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   color: #000;
   font-size: 16px;
   font-weight: 700;

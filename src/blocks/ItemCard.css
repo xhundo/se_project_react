@@ -10,6 +10,7 @@
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   margin: 0 13px 20px 0;
+  cursor: pointer;
 }
 
 .modal_open {
@@ -50,7 +51,7 @@
 .item__title {
   margin: 0;
   padding: 2px 12px 2px 12px;
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;

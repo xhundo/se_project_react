@@ -10,12 +10,12 @@ function AddItemModal({
 }) {
   const [name, setName] = React.useState("");
   const [imageUrl, setImageUrl] = React.useState("");
-  const [weather, setWeather] = React.useState();
+  const [weather, setWeather] = React.useState(null);
 
   React.useEffect(() => {
     setName("");
     setImageUrl("");
-    setWeather();
+    setWeather(null);
   }, [isOpen]);
 
   const handleChangeName = (e) => {

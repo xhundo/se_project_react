@@ -4,6 +4,7 @@ import {
   bgNightCloudy,
   bgNightRain,
   bgNightHeavy,
+  bgDay,
   bgNightSnow,
   bgNightFog,
   bgDayCloudy,
@@ -30,7 +31,7 @@ function WeatherCard({ weather }) {
   if (weather.condition === 0) {
     bgStyles = bgNight;
   } else if (weather.condition === 1) {
-    bgStyles = bgStyles;
+    bgStyles = bgDay;
   }
 
   if (weather.condition === 0 && weather.conditions === "Partly cloudy") {

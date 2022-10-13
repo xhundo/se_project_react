@@ -39,7 +39,7 @@
 }
 
 .item__description {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -50,7 +50,7 @@
 }
 
 .item__temp {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -70,6 +70,7 @@
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .item__preview {
@@ -78,7 +79,7 @@
 }
 
 .item-btn__delete {
-  font-family: "Cabinet Grotesk";
+  font-family: "CabinetGrotesk-Variable";
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -88,6 +89,7 @@
   background: transparent;
   border: none;
   margin: 20px 32px 0 0;
+  cursor: pointer;
 }
 
 .item-btn__delete:hover {

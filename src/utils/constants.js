@@ -14,12 +14,14 @@ const bgDayRain = "weather__day-rain";
 const bgDayHeavy = "weather__day-heavy-rain";
 const bgDaySnow = "weather__day-snow";
 const bgdayFog = "weather__day-fog";
+const bgDay = "weather__card";
 
 export {
   key,
   location,
   bgNight,
   baseURL,
+  bgDay,
   bgNightCloudy,
   bgNightRain,
   bgNightHeavy,
