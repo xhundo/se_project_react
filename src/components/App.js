@@ -35,12 +35,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (modalActive) {
+    if (isAddClothingModalOpen || modalActive) {
       document.addEventListener("keydown", handleCloseByEsc);
     } else {
       document.removeEventListener("keydown", handleCloseByEsc);
     }
-  }, [modalActive]);
+  });
 
   useEffect(() => {
     if (location.latitude && location.longitude) {
@@ -53,7 +53,7 @@ function App() {
   }, []);
 
   const handleAddClick = () => {
-    setModalActive("create");
+    setIsAddClothingModalOpen(true);
   };
 
   const handleAddItemSubmit = (name, imageUrl, weather) => {
@@ -69,14 +69,16 @@ function App() {
   const handleCardDelete = (id) => {
     removeItems(baseURL, id)
       .then(() => {
-        setClothingItems([...clothingItems.filter((item) => item.id !== id)]);
+        setClothingItems((state) => {
+          return [...state.filter((item) => item.id !== id)];
+        });
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const handleAddItemClick = () => {
+  const handleAddItemModal = () => {
     setIsAddClothingModalOpen(true);
   };
 
@@ -122,7 +124,7 @@ function App() {
               weather={weatherData}
               cards={clothingItems}
               cardClick={handleCardClick}
-              handleAddClick={handleAddItemClick}
+              handleAddItemModal={handleAddItemModal}
             />
           </Route>
           <Route path="/">
@@ -135,9 +137,9 @@ function App() {
         </Switch>
         <Footer />
         <ModalWithForm
-          isOpen={modalActive === "create"}
+          isOpen={isAddClothingModalOpen}
           title="New garment"
-          names="create"
+          name="create"
           buttonTxt="Add garment"
           onClose={handleClose}
           closeByEsc={handleCloseByEsc}

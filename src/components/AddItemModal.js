@@ -38,12 +38,15 @@ function AddItemModal({
       <ModalWithForm
         isOpen={isOpen}
         title="New garment"
-        names="addItem"
+        name="add"
         buttonTxt="Add garment"
         onClose={closeModal}
         closeByEsc={closeByEsc}
         closeModal={closeByTarget}
         onAddItem={onAddItem}
+        handleSubmit={handleSubmit}
+        handleWeather={handleWeather}
+        handleImageChange={handleImageChange}
       >
         <label className="modal__input-label">Name</label>
         <input
@@ -98,16 +101,6 @@ function AddItemModal({
           />
           Cold
         </label>
-        <button
-          type="button"
-          className="modal__btn-close"
-          onClick={closeModal}
-        ></button>
-        <button
-          className="modal__submit"
-          type="submit"
-          onClick={handleSubmit}
-        ></button>
       </ModalWithForm>
     );
   }

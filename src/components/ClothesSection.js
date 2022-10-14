@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard";
 import { weatherRange } from "../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 
-function ClothesSection({ cards, weather, cardClick, handleAddClick }) {
+function ClothesSection({ cards, weather, cardClick, handleAddItemClick }) {
   const currentTemperatureUnit = React.useContext(
     CurrentTemperatureUnitContext
   );
@@ -17,7 +17,7 @@ function ClothesSection({ cards, weather, cardClick, handleAddClick }) {
     <section className="clothes-section">
       <div className="clothes-section__items">
         <p className="clothes-section__text">Your items</p>
-        <button className="clothes-section__btn" onClick={handleAddClick}>
+        <button className="clothes-section__btn" onClick={handleAddItemClick}>
           + Add new
         </button>
       </div>

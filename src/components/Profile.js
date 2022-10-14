@@ -2,7 +2,7 @@ import "../blocks/Profile.css";
 import Sidebar from "./Sidebar";
 import ClothesSection from "./ClothesSection";
 
-function Profile({ weather, cards, cardClick, handleAddClick }) {
+function Profile({ weather, cards, cardClick, handleAddItemModal }) {
   return (
     <>
       <section className="profile">
@@ -11,7 +11,7 @@ function Profile({ weather, cards, cardClick, handleAddClick }) {
           weather={weather}
           cards={cards}
           cardClick={cardClick}
-          handleAddClick={handleAddClick}
+          handleAddItemClick={handleAddItemModal}
         />
       </section>
     </>
