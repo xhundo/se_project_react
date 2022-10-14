@@ -18,14 +18,11 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
-  const [name, setName] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [weather, setWeather] = useState(null);
   const [modalActive, setModalActive] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [selectCard, setSelectedCard] = useState({});
   const [weatherData, setWeatherData] = useState({});
-  const modalIsActive = modalActive === "create";
+  const [isAddClothingModalOpen, setIsAddClothingModalOpen] = useState(false);
 
   useEffect(() => {
     getItems(`${baseURL}`)
@@ -38,23 +35,22 @@ function App() {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", handleCloseByEsc);
-    setName("");
-    setImageUrl("");
-    setWeather();
-  }, [modalIsActive]);
+    if (modalActive) {
+      document.addEventListener("keydown", handleCloseByEsc);
+    } else {
+      document.removeEventListener("keydown", handleCloseByEsc);
+    }
+  }, [modalActive]);
 
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleChangeImage = (e) => {
-    setImageUrl(e.target.value);
-  };
-
-  const handleChangeWeather = (e) => {
-    setWeather(e.target.value);
-  };
+  useEffect(() => {
+    if (location.latitude && location.longitude) {
+      getWeather(key, location)
+        .then((data) => {
+          setWeatherData(filterWeather(data));
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
 
   const handleAddClick = () => {
     setModalActive("create");
@@ -81,7 +77,7 @@ function App() {
   };
 
   const handleAddItemClick = () => {
-    setModalActive("create-item");
+    setIsAddClothingModalOpen(true);
   };
 
   const handleToggleSwitchChange = () => {
@@ -97,35 +93,22 @@ function App() {
 
   const handleClose = () => {
     setModalActive(null);
+    setIsAddClothingModalOpen(false);
   };
 
   const handleCloseByEsc = (e) => {
     if (e.key === "Escape") {
       setModalActive(null);
+      setIsAddClothingModalOpen(false);
     }
   };
 
   const handleCloseByTarget = (e) => {
     if (e.target === e.currentTarget) {
       setModalActive(null);
+      setIsAddClothingModalOpen(false);
     }
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleAddItemSubmit({ name, imageUrl, weather });
-    handleClose();
-  };
-
-  useEffect(() => {
-    if (location.latitude && location.longitude) {
-      getWeather(key, location)
-        .then((data) => {
-          setWeatherData(filterWeather(data));
-        })
-        .catch((err) => console.log(err));
-    }
-  }, []);
 
   return (
     <div className="App">
@@ -154,64 +137,13 @@ function App() {
         <ModalWithForm
           isOpen={modalActive === "create"}
           title="New garment"
-          name="create"
+          names="create"
           buttonTxt="Add garment"
           onClose={handleClose}
           closeByEsc={handleCloseByEsc}
           closeModal={handleCloseByTarget}
-          handleSubmit={handleSubmit}
-        >
-          <label className="modal__input-label">Name</label>
-          <input
-            className="modal__input"
-            type="text"
-            placeholder="Name"
-            required
-            onChange={handleChangeName}
-          />
-          <label className="modal__input-label">Image</label>
-          <input
-            className="modal__input"
-            type="url"
-            placeholder="Image URL"
-            required
-            onChange={handleChangeImage}
-          />
-          <label className="modal__input-title">Select the weather type:</label>
-          <label className="modal__input-text" htmlFor="hot">
-            <input
-              className="modal__input-radio"
-              id="hot"
-              type="radio"
-              value="hot"
-              required
-              onChange={handleChangeWeather}
-            />
-            Hot
-          </label>
-          <label className="modal__input-text" htmlFor="warm">
-            <input
-              className="modal__input-radio"
-              id="warm"
-              type="radio"
-              value="warm"
-              required
-              onChange={handleChangeWeather}
-            />
-            Warm
-          </label>
-          <label className="modal__input-text" htmlFor="cold">
-            <input
-              className="modal__input-radio"
-              id="cold"
-              type="radio"
-              value="cold"
-              required
-              onChange={handleChangeWeather}
-            />
-            Cold
-          </label>
-        </ModalWithForm>
+          onAddItem={handleAddItemSubmit}
+        />
         <ItemModal
           isOpen={modalActive === "preview"}
           card={selectCard}
@@ -221,11 +153,11 @@ function App() {
           deleteCard={handleCardDelete}
         />
         <AddItemModal
-          onAddItem={handleAddItemSubmit}
           closeModal={handleClose}
           closeByEsc={handleCloseByEsc}
           closeByTarget={handleCloseByTarget}
-          isOpen={modalActive === "create-item"}
+          isOpen={isAddClothingModalOpen}
+          onAddItem={handleAddItemSubmit}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
