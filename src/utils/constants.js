@@ -1,20 +1,21 @@
-const key = "0c61d8b235c14d54bc2215401221010";
+const key = 'ae8598c7f6c60886bfd52c2ae60d4ada';
 
-const location = { latitude: "48.87", longitude: "2.33" };
-const baseURL = "https://my-json-server.typicode.com/xhundo/se_project_react";
+const location = { lat: '48.8534', lon: '2.3488' };
 
-const bgNight = "weather__night";
-const bgNightCloudy = "weather__night-cloudy";
-const bgNightRain = "weather__night-rain";
-const bgNightHeavy = "weather__night-heavy-rain";
-const bgNightSnow = "weather__night-snow";
-const bgNightFog = "weather__night-fog";
-const bgDayCloudy = "weather__day-cloudy";
-const bgDayRain = "weather__day-rain";
-const bgDayHeavy = "weather__day-heavy-rain";
-const bgDaySnow = "weather__day-snow";
-const bgdayFog = "weather__day-fog";
-const bgDay = "weather__card";
+const baseURL = 'https://my-json-server.typicode.com/xhundo/se_project_react';
+
+const bgNight = 'weather__night';
+const bgNightCloudy = 'weather__night-cloudy';
+const bgNightRain = 'weather__night-rain';
+const bgNightHeavy = 'weather__night-heavy-rain';
+const bgNightSnow = 'weather__night-snow';
+const bgNightFog = 'weather__night-fog';
+const bgDayCloudy = 'weather__day-cloudy';
+const bgDayRain = 'weather__day-rain';
+const bgDayHeavy = 'weather__day-heavy-rain';
+const bgDaySnow = 'weather__day-snow';
+const bgdayFog = 'weather__day-fog';
+const bgDay = 'weather__card';
 
 export {
   key,

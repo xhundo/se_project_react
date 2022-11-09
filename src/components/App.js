@@ -1,23 +1,23 @@
-import "../blocks/App.css";
-import "../vendor/fonts/fonts.css";
-import Footer from "./Footer";
-import AddItemModal from "./AddItemModal";
-import Header from "./Header";
-import ModalWithForm from "./ModalWithForm";
-import { getWeather, filterWeather } from "../utils/weatherApi";
-import React, { useState, useEffect } from "react";
-import { getItems, removeItems, addItems } from "../utils/Api";
-import { key } from "../utils/constants";
-import ItemModal from "./ItemModal";
-import { location } from "../utils/constants";
-import Main from "./Main";
-import { baseURL } from "../utils/constants";
-import Profile from "./Profile";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
-import { Route, Switch } from "react-router-dom";
+import '../blocks/App.css';
+import '../vendor/fonts/fonts.css';
+import Footer from './Footer';
+import AddItemModal from './AddItemModal';
+import Header from './Header';
+import ModalWithForm from './ModalWithForm';
+import { getWeather, filterWeather } from '../utils/weatherApi';
+import React, { useState, useEffect } from 'react';
+import { getItems, removeItems, addItems } from '../utils/Api';
+import { key } from '../utils/constants';
+import ItemModal from './ItemModal';
+import { location } from '../utils/constants';
+import Main from './Main';
+import { baseURL } from '../utils/constants';
+import Profile from './Profile';
+import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitContext';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [modalActive, setModalActive] = useState(null);
   const [clothingItems, setClothingItems] = useState([]);
   const [selectCard, setSelectedCard] = useState({});
@@ -36,14 +36,14 @@ function App() {
 
   useEffect(() => {
     if (isAddClothingModalOpen || modalActive) {
-      document.addEventListener("keydown", handleCloseByEsc);
+      document.addEventListener('keydown', handleCloseByEsc);
     } else {
-      document.removeEventListener("keydown", handleCloseByEsc);
+      document.removeEventListener('keydown', handleCloseByEsc);
     }
   });
 
   useEffect(() => {
-    if (location.latitude && location.longitude) {
+    if (location.lat && location.lon) {
       getWeather(key, location)
         .then((data) => {
           setWeatherData(filterWeather(data));
@@ -83,14 +83,14 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    currentTemperatureUnit === "F"
-      ? setCurrentTemperatureUnit("C")
-      : setCurrentTemperatureUnit("F");
+    currentTemperatureUnit === 'F'
+      ? setCurrentTemperatureUnit('C')
+      : setCurrentTemperatureUnit('F');
   };
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
-    setModalActive("preview");
+    setModalActive('preview');
   };
 
   const handleClose = () => {
@@ -99,7 +99,7 @@ function App() {
   };
 
   const handleCloseByEsc = (e) => {
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       setModalActive(null);
       setIsAddClothingModalOpen(false);
     }
@@ -147,7 +147,7 @@ function App() {
           onAddItem={handleAddItemSubmit}
         />
         <ItemModal
-          isOpen={modalActive === "preview"}
+          isOpen={modalActive === 'preview'}
           card={selectCard}
           onClose={handleClose}
           closeByEsc={handleCloseByEsc}
