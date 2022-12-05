@@ -4,6 +4,7 @@ import Footer from './Footer';
 import AddItemModal from './AddItemModal';
 import Header from './Header';
 import ModalWithForm from './ModalWithForm';
+import { Route, Switch } from 'react-router-dom';
 import { getWeather, filterWeather } from '../utils/weatherApi';
 import React, { useState, useEffect } from 'react';
 import {
@@ -22,7 +23,6 @@ import Profile from './Profile';
 import RegisterModal from './RegisterModal';
 import ProtectedRoute from './ProtectedRoute';
 import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitContext';
-import { Route, Switch } from 'react-router-dom';
 import * as auth from '../utils/auth.js';
 import LoginModal from './LoginModal';
 import EditProfileModal from './EditProfileModal';
