@@ -5,7 +5,7 @@ import AddItemModal from './AddItemModal';
 import Header from './Header';
 import ModalWithForm from './ModalWithForm';
 import { getWeather, filterWeather } from '../utils/weatherApi';
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   getItems,
   removeItems,
