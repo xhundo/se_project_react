@@ -1,4 +1,4 @@
-import "../blocks/ModalWithForm.css";
+import '../blocks/ModalWithForm.css';
 
 function ModalWithForm({
   isOpen,
@@ -13,7 +13,7 @@ function ModalWithForm({
 }) {
   return (
     <div
-      className={`modal modal__${name} ${isOpen ? `modal_open` : ""}`}
+      className={`modal modal__${name} ${isOpen ? `modal_open` : ''}`}
       onClick={closeModal}
     >
       <div className="modal__content">
@@ -25,13 +25,13 @@ function ModalWithForm({
             className="modal__btn-close"
             onClick={onClose}
           ></button>
-          <button
+          {/* <button
             className="modal__submit"
             type="submit"
             onClick={handleSubmit}
           >
             {buttonTxt}
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

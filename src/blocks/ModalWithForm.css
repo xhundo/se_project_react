@@ -39,7 +39,7 @@
   position: absolute;
   top: 30px;
   left: 444px;
-  background-image: url("../images/btn-close.svg");
+  background-image: url('../images/btn-close.svg');
   background-color: transparent;
   border: none;
   width: 16px;
@@ -50,7 +50,7 @@
 .modal__submit {
   background-color: #000;
   border: none;
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 16px;
   color: #fff;
   border-radius: 4px;
@@ -59,9 +59,72 @@
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;
-  width: 126px;
+  width: 124px;
   margin: 32px 0 36px 0;
   cursor: pointer;
+}
+.modal__submit-register {
+  transition: ease-in 0.3s;
+  background-color: #000;
+  border: none;
+  font-family: 'CabinetGrotesk-Variable';
+  font-size: 16px;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 8px 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 65px;
+  margin: 32px 12px 36px 0;
+  cursor: pointer;
+}
+.modal__submit-login {
+  transition: ease-in 0.3s;
+  background-color: black;
+  border: none;
+  font-family: 'CabinetGrotesk-Variable';
+  font-size: 16px;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 8px 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 73px;
+  margin: 32px 12px 36px 0;
+  cursor: pointer;
+}
+
+.modal__submit-login:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal__submit-register:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__submit-btn {
+  display: flex;
+  align-items: center;
+}
+
+.modal__submit-txt {
+  font-family: 'Cabinet Grotesk';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.modal__submit:nth-last-child(3n) {
+  margin: 0;
 }
 
 .modal__submit:hover {
@@ -74,7 +137,7 @@
 }
 
 .modal__title {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -90,7 +153,7 @@
 }
 
 .modal__input-label {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -101,7 +164,7 @@
 }
 
 .modal__input-title {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   color: #000;
   font-size: 16px;
   font-weight: 700;
@@ -116,7 +179,7 @@
   border-bottom: 1px solid #000;
   margin-bottom: 28px;
   padding: 0 0 4px 0;
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -125,7 +188,7 @@
 }
 
 .modal__input::placeholder {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -162,7 +225,7 @@
 .modal__input-text {
   display: flex;
   align-items: center;
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   cursor: pointer;
   color: #000;
   font-size: 16px;
@@ -175,4 +238,60 @@
 
 .modal__input-text:nth-of-type(3n) {
   margin-bottom: 0;
+}
+
+.modal__input-avatar {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 0 0 4px 0;
+  font-family: 'CabinetGrotesk-Variable';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.modal__input-avatar-error {
+  border: #ff4d00;
+}
+
+.modal__submit-change {
+  background-color: #000;
+  border: none;
+  font-family: 'CabinetGrotesk-Variable';
+  font-size: 16px;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 8px 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 128px;
+  margin: 32px 0 36px 0;
+  cursor: pointer;
+}
+
+.modal__input-error {
+  font-family: 'Cabinet Grotesk';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ff4d00;
+}
+
+.modal__input-password-error {
+  border: none;
+  border-bottom: 1px solid #ff4d00;
+  color: #ff4d00;
+  padding: 0 0 4px 0;
+  font-family: 'CabinetGrotesk-Variable';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
 }

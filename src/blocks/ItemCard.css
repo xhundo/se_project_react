@@ -51,7 +51,7 @@
 .item__title {
   margin: 0;
   padding: 2px 12px 2px 12px;
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -62,15 +62,33 @@
 
 .item__like {
   margin-top: 20px;
-  background-image: url("../images/itemLike.svg");
+  background-image: url('../images/itemLike.svg');
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
   padding: 0;
   width: 20px;
   height: 19px;
+  cursor: pointer;
+}
+
+.item__btn-liked {
+  margin-top: 20px;
+  background-image: url('../images/itemlikeshade.svg');
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 0;
+  width: 20px;
+  height: 19px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .item__btn {
   z-index: 2;
+}
+
+.item__liked-hidden {
+  display: none;
 }

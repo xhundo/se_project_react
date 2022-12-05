@@ -1,16 +1,30 @@
-import "../blocks/ClothesSection.css";
-import React from "react";
-import ItemCard from "./ItemCard";
-import { weatherRange } from "../utils/weatherApi";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import '../blocks/ClothesSection.css';
+import React, { useContext } from 'react';
+import ItemCard from './ItemCard';
+import { weatherRange } from '../utils/weatherApi';
+import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitContext';
+import { currentUserContext } from '../contexts/CurrentUserContext';
 
-function ClothesSection({ cards, weather, cardClick, handleAddItemClick }) {
+function ClothesSection({
+  cards,
+  weather,
+  cardClick,
+  handleAddItemClick,
+  onCardLike,
+  isLoggedIn,
+}) {
   const currentTemperatureUnit = React.useContext(
-    CurrentTemperatureUnitContext
+    CurrentTemperatureUnitContext,
   );
 
+  const currentUser = useContext(currentUserContext);
+  // const isOwn = cards._id === currentUser.id;
+  // const clothingSectionCards = `clothes-section__cards ${
+  //   isOwn ? `clothes-section__cards` : `clothes-section__cards-hidden`
+  // }`;
+
   const currentTemp =
-    currentTemperatureUnit === "F"
+    currentTemperatureUnit === 'F'
       ? weather?.temperature?.F
       : weather?.temperature?.C;
   return (
@@ -26,9 +40,11 @@ function ClothesSection({ cards, weather, cardClick, handleAddItemClick }) {
           .filter((card) => card.weather === weatherRange(currentTemp))
           .map((currentCard) => (
             <ItemCard
-              key={currentCard.id}
+              isLoggedIn={isLoggedIn}
+              key={currentCard._id}
               card={currentCard}
               cardClick={() => cardClick(currentCard)}
+              onCardLike={onCardLike}
             />
           ))}
       </ul>

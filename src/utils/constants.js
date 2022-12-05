@@ -1,8 +1,9 @@
 const key = 'ae8598c7f6c60886bfd52c2ae60d4ada';
 
 const location = { lat: '48.8534', lon: '2.3488' };
-
+const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
 const baseURL = 'https://my-json-server.typicode.com/xhundo/se_project_react';
+const URL = 'http://localhost:3001';
 
 const bgNight = 'weather__night';
 const bgNightCloudy = 'weather__night-cloudy';
@@ -33,4 +34,6 @@ export {
   bgDayHeavy,
   bgDaySnow,
   bgdayFog,
+  URL,
+  regex,
 };

@@ -1,17 +1,17 @@
-import React from "react";
-import WeatherCard from "./WeatherCard";
-import ItemCard from "./ItemCard";
-import "../blocks/Main.css";
-import { weatherRange } from "../utils/weatherApi";
-import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import React from 'react';
+import WeatherCard from './WeatherCard';
+import ItemCard from './ItemCard';
+import '../blocks/Main.css';
+import { weatherRange } from '../utils/weatherApi';
+import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitContext';
 
-function Main({ weather, cards, handleCardClick }) {
+function Main({ weather, cards, handleCardClick, onCardLike, user, loggedIn }) {
   const { currentTemperatureUnit } = React.useContext(
-    CurrentTemperatureUnitContext
+    CurrentTemperatureUnitContext,
   );
 
   const currentTemp =
-    currentTemperatureUnit === "F"
+    currentTemperatureUnit === 'F'
       ? weather?.temperature?.F
       : weather?.temperature?.C;
 
@@ -29,7 +29,10 @@ function Main({ weather, cards, handleCardClick }) {
             .filter((card) => card.weather === weatherRange(currentTemp))
             .map((currentCard) => (
               <ItemCard
-                key={currentCard.id}
+                isLoggedIn={loggedIn}
+                onCardLike={onCardLike}
+                cUser={user}
+                key={currentCard._id}
                 card={currentCard}
                 cardClick={() => handleCardClick(currentCard)}
               />

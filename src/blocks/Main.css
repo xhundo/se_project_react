@@ -1,9 +1,12 @@
 .main {
   margin: 33px 40px 171px 38px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .main__weather-status {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;

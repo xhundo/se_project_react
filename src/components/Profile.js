@@ -1,15 +1,32 @@
-import "../blocks/Profile.css";
-import Sidebar from "./Sidebar";
-import ClothesSection from "./ClothesSection";
+import '../blocks/Profile.css';
+import Sidebar from './Sidebar';
+import ClothesSection from './ClothesSection';
 
-function Profile({ weather, cards, cardClick, handleAddItemModal }) {
+function Profile({
+  weather,
+  cards,
+  cardClick,
+  handleAddItemModal,
+  user,
+  handleEditProfileModal,
+  handleLogOut,
+  onCardLike,
+  loggedIn,
+}) {
+  const myCards = cards.filter((item) => item.owner === user.id);
   return (
     <>
       <section className="profile">
-        <Sidebar />
+        <Sidebar
+          user={user}
+          handleEditProfileModal={handleEditProfileModal}
+          handleLogOut={handleLogOut}
+        />
         <ClothesSection
           weather={weather}
-          cards={cards}
+          cards={myCards}
+          isLoggedIn={loggedIn}
+          onCardLike={onCardLike}
           cardClick={cardClick}
           handleAddItemClick={handleAddItemModal}
         />

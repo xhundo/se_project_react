@@ -5,7 +5,7 @@
 }
 
 .clothes-section__text {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
@@ -16,7 +16,7 @@
 }
 
 .clothes-section__btn {
-  font-family: "CabinetGrotesk-Variable";
+  font-family: 'CabinetGrotesk-Variable';
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
@@ -34,6 +34,13 @@
 
 .clothes-section__cards {
   display: flex;
+  flex-wrap: wrap;
+  width: calc(1016px + 50px);
+  padding: 0;
+}
+
+.clothes-section__cards-hidden {
+  visibility: hidden;
   flex-wrap: wrap;
   width: calc(1016px + 50px);
   padding: 0;
