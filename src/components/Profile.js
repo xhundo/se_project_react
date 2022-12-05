@@ -1,5 +1,5 @@
 import '../blocks/Profile.css';
-import Sidebar from './Sidebar';
+import SideBar from './SideBar';
 import ClothesSection from './ClothesSection';
 
 function Profile({
@@ -17,7 +17,7 @@ function Profile({
   return (
     <>
       <section className="profile">
-        <Sidebar
+        <SideBar
           user={user}
           handleEditProfileModal={handleEditProfileModal}
           handleLogOut={handleLogOut}
