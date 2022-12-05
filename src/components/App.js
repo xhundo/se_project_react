@@ -250,8 +250,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <currentUserContext.Provider value={currentUser}>
+    <currentUserContext.Provider value={currentUser}>
+      <div className="App">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
@@ -342,8 +342,8 @@ function App() {
             handleUserUpdate={handleProfileUpdate}
           />
         </CurrentTemperatureUnitContext.Provider>
-      </currentUserContext.Provider>
-    </div>
+      </div>
+    </currentUserContext.Provider>
   );
 }
 
