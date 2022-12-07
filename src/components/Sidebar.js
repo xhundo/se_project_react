@@ -9,7 +9,11 @@ function SideBar({ user, handleEditProfileModal, handleLogOut }) {
             {user.name.slice(0, 1)}
           </div>
         ) : (
-          <img className="sidebar__user-avatar" src={user.avatar} />
+          <img
+            className="sidebar__user-avatar"
+            src={user.avatar}
+            alt={user.name}
+          />
         )}
         <p className="sidebar__user-name">{user.name}</p>
       </div>

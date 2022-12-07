@@ -14,6 +14,7 @@ function AddItemModal({
   useEffect(() => {
     setName('');
     setImageUrl('');
+    setWeather(null);
   }, [isOpen]);
 
   const handleChangeName = (e) => {
