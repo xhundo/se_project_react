@@ -1,6 +1,6 @@
 import '../blocks/Sidebar.css';
 
-function SideBar({ user, handleEditProfileModal, handleLogOut }) {
+function Sidebar({ user, handleEditProfileModal, handleLogOut }) {
   return (
     <div className="sidebar">
       <div className="sidebar__info">
@@ -29,4 +29,4 @@ function SideBar({ user, handleEditProfileModal, handleLogOut }) {
   );
 }
 
-export default SideBar;
+export default Sidebar;

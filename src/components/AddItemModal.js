@@ -77,6 +77,7 @@ function AddItemModal({
             id="hot"
             type="radio"
             value="hot"
+            checked={weather === 'hot'}
             name={weather}
             onChange={handleWeather}
           />
@@ -89,6 +90,7 @@ function AddItemModal({
             type="radio"
             value="warm"
             name={weather}
+            checked={weather === 'warm'}
             onChange={handleWeather}
           />
           Warm
@@ -99,6 +101,7 @@ function AddItemModal({
             className="modal__input-radio"
             id="cold"
             type="radio"
+            checked={weather === 'cold'}
             value="cold"
             name={weather}
             onChange={handleWeather}
