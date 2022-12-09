@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/se_project_react/static/css/main.ccc0ac20.css",
-    "main.js": "/se_project_react/static/js/main.076155b3.js",
+    "main.css": "/se_project_react/static/css/main.678b6311.css",
+    "main.js": "/se_project_react/static/js/main.8c18d191.js",
     "static/js/787.79f92504.chunk.js": "/se_project_react/static/js/787.79f92504.chunk.js",
-    "static/media/avatar.svg": "/se_project_react/static/media/avatar.854041bda88eabe69eb8648fa415f560.svg",
     "static/media/CabinetGrotesk-Variable.woff2": "/se_project_react/static/media/CabinetGrotesk-Variable.625aff7cd2cc651382da.woff2",
     "static/media/CabinetGrotesk-Variable.woff": "/se_project_react/static/media/CabinetGrotesk-Variable.a3ac6ee526fe9ba86a2a.woff",
     "static/media/nightfog.png": "/se_project_react/static/media/nightfog.87ed0c38ca3eeccd5e51.png",
@@ -12,12 +11,13 @@
     "static/media/btn-close.svg": "/se_project_react/static/media/btn-close.5041c8cbf1275be14ac1.svg",
     "index.html": "/se_project_react/index.html",
     "static/media/itemLike.svg": "/se_project_react/static/media/itemLike.9af4bc2a5c83c5df7d12.svg",
-    "main.ccc0ac20.css.map": "/se_project_react/static/css/main.ccc0ac20.css.map",
-    "main.076155b3.js.map": "/se_project_react/static/js/main.076155b3.js.map",
+    "static/media/itemlikeshade.svg": "/se_project_react/static/media/itemlikeshade.0c81b4ab646da6e279a4.svg",
+    "main.678b6311.css.map": "/se_project_react/static/css/main.678b6311.css.map",
+    "main.8c18d191.js.map": "/se_project_react/static/js/main.8c18d191.js.map",
     "787.79f92504.chunk.js.map": "/se_project_react/static/js/787.79f92504.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccc0ac20.css",
-    "static/js/main.076155b3.js"
+    "static/css/main.678b6311.css",
+    "static/js/main.8c18d191.js"
   ]
 }
