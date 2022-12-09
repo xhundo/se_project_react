@@ -26,7 +26,7 @@ import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitCon
 import * as auth from '../utils/auth.js';
 import LoginModal from './LoginModal';
 import EditProfileModal from './EditProfileModal';
-import { currentUserContext } from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
@@ -106,6 +106,7 @@ function App() {
     addItems(URL, name, imageUrl, weather, token)
       .then((item) => {
         setClothingItems([item.data, ...clothingItems]);
+        handleClose();
       })
       .catch((err) => {
         console.log(err);
@@ -134,11 +135,13 @@ function App() {
     return auth
       .register(URL, name, avatar, email, password)
       .then((data) => {
+        setIsLoggedin(true);
         setCurrentUser({ name: data.name, avatar: data.avatar });
+        handleClose();
       })
       .catch((e) => {
         setIsLoggedin(false);
-        throw e;
+        console.log(e);
       });
   };
 
@@ -147,16 +150,16 @@ function App() {
     return auth
       .authorization(URL, email, password)
       .then(() => {
+        handleClose();
         setIsLoggedin(true);
       })
       .catch((e) => {
-        setShowLoginError(true);
         console.log(e);
-        throw e;
+        setShowLoginError(true);
       });
   };
 
-  const handleProfileUpdate = ({ name, avatar, token }) => {
+  const handleProfileUpdate = async ({ name, avatar, token }) => {
     updateUser(URL, name, avatar, token)
       .then((res) => {
         setCurrentUser({
@@ -231,7 +234,7 @@ function App() {
 
   const handleCloseByEsc = (e) => {
     if (e.key === 'Escape') {
-      setModalActive(null);
+      handleClose();
       setIsAddClothingModalOpen(false);
       setEditProfileModal(false);
       setRegisterModal(false);
@@ -241,7 +244,7 @@ function App() {
 
   const handleCloseByTarget = (e) => {
     if (e.target === e.currentTarget) {
-      setModalActive(null);
+      handleClose();
       setIsAddClothingModalOpen(false);
       setEditProfileModal(false);
       setRegisterModal(false);
@@ -250,7 +253,7 @@ function App() {
   };
 
   return (
-    <currentUserContext.Provider value={currentUser}>
+    <CurrentUserContext.Provider value={currentUser}>
       <div className="App">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -343,7 +346,7 @@ function App() {
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
-    </currentUserContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 

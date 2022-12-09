@@ -37,7 +37,6 @@ function AddItemModal({
       imageUrl,
       token: localStorage.getItem('token'),
     });
-    closeModal();
   };
   {
     return (
@@ -51,6 +50,9 @@ function AddItemModal({
         onAddItem={onAddItem}
         handleWeather={handleWeather}
         handleImageChange={handleImageChange}
+        buttonTxt="Add garment"
+        handleSubmit={handleSubmit}
+        selector={'modal__submit'}
       >
         <label className="modal__input-label">Name</label>
         <input
@@ -108,9 +110,6 @@ function AddItemModal({
           />
           Cold
         </label>
-        <button className="modal__submit" onClick={handleSubmit}>
-          Add garment
-        </button>
       </ModalWithForm>
     );
   }

@@ -1,9 +1,9 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext } from 'react';
 import '../blocks/ItemCard.css';
-import { currentUserContext } from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function ItemCard({ card, cardClick, onCardLike, isLoggedIn }) {
-  const currentUser = useContext(currentUserContext);
+  const currentUser = useContext(CurrentUserContext);
   const isLiked = card.likes.some((like) => like === currentUser.id);
   const token = localStorage.getItem('token');
 

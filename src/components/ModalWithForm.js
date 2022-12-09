@@ -10,6 +10,9 @@ function ModalWithForm({
   title,
   children,
   handleSubmit,
+  selector,
+  btnAlt,
+  disabled,
 }) {
   return (
     <div
@@ -17,7 +20,12 @@ function ModalWithForm({
       onClick={closeModal}
     >
       <div className="modal__content">
-        <form className="modal__form" name={name} onKeyDown={closeByEsc}>
+        <form
+          className="modal__form"
+          name={name}
+          onKeyDown={closeByEsc}
+          noValidate
+        >
           <h2 className="modal__title">{title}</h2>
           {children}
           <button
@@ -25,13 +33,16 @@ function ModalWithForm({
             className="modal__btn-close"
             onClick={onClose}
           ></button>
-          {/* <button
-            className="modal__submit"
-            type="submit"
-            onClick={handleSubmit}
-          >
-            {buttonTxt}
-          </button> */}
+          <div className="modal__submit-btn">
+            <button
+              disabled={disabled}
+              className={selector}
+              onClick={handleSubmit}
+            >
+              {buttonTxt}
+            </button>
+            <p className="modal__submit-txt">{btnAlt}</p>
+          </div>
         </form>
       </div>
     </div>

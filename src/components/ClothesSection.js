@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import ItemCard from './ItemCard';
 import { weatherRange } from '../utils/weatherApi';
 import CurrentTemperatureUnitContext from '../contexts/CurrentTemperatureUnitContext';
-import { currentUserContext } from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function ClothesSection({
   cards,
@@ -17,7 +17,7 @@ function ClothesSection({
     CurrentTemperatureUnitContext,
   );
 
-  const currentUser = useContext(currentUserContext);
+  const currentUser = useContext(CurrentUserContext);
   // const isOwn = cards._id === currentUser.id;
   // const clothingSectionCards = `clothes-section__cards ${
   //   isOwn ? `clothes-section__cards` : `clothes-section__cards-hidden`

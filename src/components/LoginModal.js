@@ -22,7 +22,6 @@ function LoginModal({
     handleSignIn(email, password)
       .then(() => {
         history.push('/profile');
-        closeModal();
       })
       .catch((e) => {
         console.log(e);
@@ -48,6 +47,10 @@ function LoginModal({
       closeModal={closeByTarget}
       onClose={closeModal}
       closeByEsc={closeByEsc}
+      selector={'modal__submit-login'}
+      btnAlt="or Register"
+      handleSubmit={handleSubmit}
+      disabled={!isValid}
     >
       <label className="modal__input-label" htmlFor="email">
         Email
@@ -81,7 +84,7 @@ function LoginModal({
         placeholder="Password"
         required
       />
-      <div className="modal__submit-btn">
+      {/* <div className="modal__submit-btn">
         <button
           className="modal__submit-login"
           onClick={handleSubmit}
@@ -90,7 +93,7 @@ function LoginModal({
           Log in
         </button>
         <p className="modal__submit-txt">or Register</p>
-      </div>
+      </div> */}
     </ModalWithForm>
   );
 }

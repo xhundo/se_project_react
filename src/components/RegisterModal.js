@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ModalWithForm from './ModalWithForm';
 import { useHistory } from 'react-router-dom';
 import { regex } from '../utils/constants';
@@ -29,9 +29,7 @@ function RegisterModal({
     e.preventDefault();
     handleSignUp(name, avatar, email, password)
       .then(() => {
-        isLoggedIn(true);
         history.push('/profile');
-        closeModal();
       })
       .catch((e) => {
         console.log(e);
@@ -57,6 +55,9 @@ function RegisterModal({
       onClose={closeModal}
       name="register"
       handleSubmit={handleSubmit}
+      selector={'modal__submit-register'}
+      btnAlt="or log in"
+      disabled={!isValid}
     >
       <label className="modal__input-label">Email*</label>
       <input
@@ -99,18 +100,18 @@ function RegisterModal({
         onChange={(e) => setAvatar(e.target.value)}
         placeholder="Avatar URL"
       />
-      <div className="modal__submit-btn">
+      {/* <div className="modal__submit-btn">
         <button
           disabled={!isValid}
           className="modal__submit-register"
           onClick={handleSubmit}
         >
           Next
-        </button>
+        </button> 
         <p className="modal__submit-txt" onClick={modalLogin}>
           or log in
         </p>
-      </div>
+      </div> */}
     </ModalWithForm>
   );
 }

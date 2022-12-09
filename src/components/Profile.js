@@ -15,23 +15,21 @@ function Profile({
 }) {
   const myCards = cards.filter((item) => item.owner === user.id);
   return (
-    <>
-      <section className="profile">
-        <SideBar
-          user={user}
-          handleEditProfileModal={handleEditProfileModal}
-          handleLogOut={handleLogOut}
-        />
-        <ClothesSection
-          weather={weather}
-          cards={myCards}
-          isLoggedIn={loggedIn}
-          onCardLike={onCardLike}
-          cardClick={cardClick}
-          handleAddItemClick={handleAddItemModal}
-        />
-      </section>
-    </>
+    <section className="profile">
+      <SideBar
+        user={user}
+        handleEditProfileModal={handleEditProfileModal}
+        handleLogOut={handleLogOut}
+      />
+      <ClothesSection
+        weather={weather}
+        cards={myCards}
+        isLoggedIn={loggedIn}
+        onCardLike={onCardLike}
+        cardClick={cardClick}
+        handleAddItemClick={handleAddItemModal}
+      />
+    </section>
   );
 }
 

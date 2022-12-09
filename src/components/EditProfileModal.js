@@ -17,8 +17,17 @@ function EditProfileModal({
   const [avatar, setAvatar] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleUserUpdate({ name, avatar, token: localStorage.getItem('token') });
-    closeModal();
+    handleUserUpdate({
+      name,
+      avatar,
+      token: localStorage.getItem('token'),
+    })
+      .then(() => {
+        closeModal();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const handleNameInput = (e) => {
@@ -39,6 +48,7 @@ function EditProfileModal({
       handleSubmit={handleSubmit}
       buttonTxt="Save changes"
       name="profile"
+      selector={'modal__submit-change'}
     >
       <label className="modal__input-label">Name*</label>
       <input
@@ -58,9 +68,13 @@ function EditProfileModal({
         placeholder="Avatar"
         onChange={handleAvatarInput}
       />
-      <button onClick={handleSubmit} className="modal__submit-change">
+      {/* <button
+        type="submit"
+        onClick={handleSubmit}
+        className="modal__submit-change"
+      >
         Save changes
-      </button>
+      </button> */}
     </ModalWithForm>
   );
 }

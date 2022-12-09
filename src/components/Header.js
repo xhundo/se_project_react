@@ -1,10 +1,9 @@
 import '../blocks/Header.css';
 import logo from '../images/Logo.svg';
-import avatar from '../images/avatar.svg';
 import ToggleSwitch from './ToggleSwitch';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { currentUserContext } from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Header({
   weather,
@@ -13,7 +12,7 @@ function Header({
   handleRegisterModal,
   handleLoginModal,
 }) {
-  const currentUser = useContext(currentUserContext);
+  const currentUser = useContext(CurrentUserContext);
   const currentDate = new Date().toLocaleString('default', {
     month: 'long',
     day: 'numeric',
@@ -48,7 +47,11 @@ function Header({
                 {currentUser.name[0]}
               </div>
             ) : (
-              <img className="header__user-avatar" src={currentUser.avatar} />
+              <img
+                className="header__user-avatar"
+                src={currentUser.avatar}
+                alt={currentUser.name}
+              />
             )}
           </Link>
         ) : (
