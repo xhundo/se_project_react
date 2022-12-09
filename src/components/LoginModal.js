@@ -84,16 +84,6 @@ function LoginModal({
         placeholder="Password"
         required
       />
-      {/* <div className="modal__submit-btn">
-        <button
-          className="modal__submit-login"
-          onClick={handleSubmit}
-          disabled={!isValid}
-        >
-          Log in
-        </button>
-        <p className="modal__submit-txt">or Register</p>
-      </div> */}
     </ModalWithForm>
   );
 }

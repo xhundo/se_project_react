@@ -68,13 +68,6 @@ function EditProfileModal({
         placeholder="Avatar"
         onChange={handleAvatarInput}
       />
-      {/* <button
-        type="submit"
-        onClick={handleSubmit}
-        className="modal__submit-change"
-      >
-        Save changes
-      </button> */}
     </ModalWithForm>
   );
 }

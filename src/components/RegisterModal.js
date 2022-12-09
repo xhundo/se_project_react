@@ -9,8 +9,6 @@ function RegisterModal({
   closeModal,
   closeByTarget,
   closeByEsc,
-  modalLogin,
-  isLoggedIn,
 }) {
   const [email, setEmail] = useState('');
   const history = useHistory();
@@ -100,18 +98,6 @@ function RegisterModal({
         onChange={(e) => setAvatar(e.target.value)}
         placeholder="Avatar URL"
       />
-      {/* <div className="modal__submit-btn">
-        <button
-          disabled={!isValid}
-          className="modal__submit-register"
-          onClick={handleSubmit}
-        >
-          Next
-        </button> 
-        <p className="modal__submit-txt" onClick={modalLogin}>
-          or log in
-        </p>
-      </div> */}
     </ModalWithForm>
   );
 }

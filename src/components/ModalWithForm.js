@@ -1,5 +1,7 @@
 import '../blocks/ModalWithForm.css';
 
+/* You selected the wrong weather type thats why your item does not show up in clothes. The current weather type is cold */
+
 function ModalWithForm({
   isOpen,
   closeModal,
@@ -25,6 +27,7 @@ function ModalWithForm({
           name={name}
           onKeyDown={closeByEsc}
           noValidate
+          onSubmit={handleSubmit}
         >
           <h2 className="modal__title">{title}</h2>
           {children}
@@ -34,11 +37,7 @@ function ModalWithForm({
             onClick={onClose}
           ></button>
           <div className="modal__submit-btn">
-            <button
-              disabled={disabled}
-              className={selector}
-              onClick={handleSubmit}
-            >
+            <button disabled={disabled} type="submit" className={selector}>
               {buttonTxt}
             </button>
             <p className="modal__submit-txt">{btnAlt}</p>

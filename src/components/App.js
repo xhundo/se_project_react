@@ -28,6 +28,8 @@ import LoginModal from './LoginModal';
 import EditProfileModal from './EditProfileModal';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
+/* You selected the wrong weather type thats why your item does not show up in clothes. The current weather type is cold */
+
 function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState('F');
   const [modalActive, setModalActive] = useState(null);
@@ -235,20 +237,12 @@ function App() {
   const handleCloseByEsc = (e) => {
     if (e.key === 'Escape') {
       handleClose();
-      setIsAddClothingModalOpen(false);
-      setEditProfileModal(false);
-      setRegisterModal(false);
-      setLoginModal(false);
     }
   };
 
   const handleCloseByTarget = (e) => {
     if (e.target === e.currentTarget) {
       handleClose();
-      setIsAddClothingModalOpen(false);
-      setEditProfileModal(false);
-      setRegisterModal(false);
-      setLoginModal(false);
     }
   };
 
