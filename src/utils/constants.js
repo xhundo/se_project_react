@@ -6,7 +6,7 @@ const baseURL = 'https://my-json-server.typicode.com/xhundo/se_project_react';
 const URL =
   process.env.NODE_ENV === 'production'
     ? 'https://api.wtwr-demo.students.nomoredomainssbs.ru'
-    : 'http://localhost:3000';
+    : 'http://localhost:3001';
 
 const bgNight = 'weather__night';
 const bgNightCloudy = 'weather__night-cloudy';
