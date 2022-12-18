@@ -12,14 +12,13 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://xhundo.github.io/se_project_react",
+  "homepage": "wtwr-demo.students.nomoredomainssbs.ru",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "gitdeploy": "gh-pages -d build",
     "deploy": "npm run build && scp -r ./build/* josephkurt18@wtwr-demo.students.nomoredomainssbs.ru:/home/josephkurt18/frontend"
   },
   "eslintConfig": {
